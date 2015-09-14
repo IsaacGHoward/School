@@ -22,6 +22,13 @@ public class School {
         
         double val = wimin.getWeight();
         
-        Person.devPrintNames();
+        Person.devPrintAttributes();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        
+        Course MathAnalysis = Course.addCourse("Math Analysis H",Course.Type.Math, 1);
+        
+        Course.devPrintAttributes();
     }
 }

@@ -86,7 +86,7 @@ public class Person {
             }
         }
     }
-    public static void devPrintNames()
+    public static void devPrintAttributes()
     {
         System.out.println("name  gender  weight ");
         for (Person temp : people)

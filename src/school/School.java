@@ -15,12 +15,13 @@ public class School {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Person wimin = Person.addPerson("grill", Person.Gender.Female,  120.0);
-        Person satan_lord_of_darkness = Person.addPerson("satan, lord of darkness", Person.Gender.Male,  666.6);
-        Person gilligan = Person.addPerson("gilligan", Person.Gender.Male,  9001);
-        Person skipper = Person.addPerson("skipper", Person.Gender.Male, 100.001);
+        Person grill_generic = Person.addPerson("grill", Person.Gender.Female,  100.0);
+        Person boy_generic = Person.addPerson("boy", Person.Gender.Male,  100.0);
+        Person me = Person.addPerson("Isaac", Person.Gender.Male,  100);
+        Person tyler = Person.addPerson("Tyler", Person.Gender.Male, 100.001);
+        Person michael = Person.addPerson("Michael", Person.Gender.Male, 100.0);
         
-        double val = wimin.getWeight();
+        double val = me.getWeight();
         
         Person.devPrintAttributes();
         System.out.println("");

@@ -27,7 +27,10 @@ public class School {
         System.out.println("");
         System.out.println("");
         
-        Course MathAnalysis = Course.addCourse("Math Analysis H",Course.Type.Math, 1);
+        Course ASL2 = Course.addCourse("American Sign Language 2",Course.Type.Language, 1);
+        Course CS2 = Course.addCourse("Computer Science 2",Course.Type.Elective, 2);
+        Course MathAnalysis = Course.addCourse("Math Analysis H",Course.Type.Math, 3);
+        Course English10H = Course.addCourse("English 10 H",Course.Type.English, 4);
         
         Course.devPrintAttributes();
     }

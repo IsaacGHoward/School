@@ -34,5 +34,10 @@ public class School {
         Course English10H = Course.addCourse("English 10 H",Course.Type.English, 4);
         
         Course.devPrintAttributes();
+        
+        me.setBirthdate(20, 9, 2000);
+        me.getAge();
+        System.out.println(me.getAge());
+      
     }
 }

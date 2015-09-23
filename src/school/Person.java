@@ -22,6 +22,8 @@ public class Person {
     private String name;
     private double weight;
     
+    private Course theCourse;
+    
     private int birthDay;
     private int birthMonth;
     private int birthYear;
@@ -32,7 +34,10 @@ public class Person {
         return(temp);
         
     }
-            
+    public static void addPerson(Person _person)
+    {
+        people.add(_person);
+    }
     Person()
     {
         name = "None";
@@ -104,7 +109,14 @@ public class Person {
     {
         weight = _weight;
     }
-            
+    public void addCourse(Course _course)
+    {
+        if(theCourse == null)
+        {
+            theCourse = _course;
+            _course.addPerson(this);
+        }
+    }
     public static void printNames()
     {
         System.out.println("people");

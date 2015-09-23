@@ -23,7 +23,7 @@ public class School {
         
         double val = me.getWeight();
         
-        Person.devPrintAttributes();
+        //Person.devPrintAttributes();
         System.out.println("");
         System.out.println("");
         System.out.println("");
@@ -35,9 +35,14 @@ public class School {
         
         Course.devPrintAttributes();
         
-        me.setBirthdate(20, 9, 2000);
-        me.getAge();
+        me.setBirthdate(23, 5, 2000);
         System.out.println(me.getAge());
-      
+        
+        Student billy = Student.addStudent("Billy",Person.Gender.Male,150,10);
+        
+        
+       // Student billy = new Student(Person.Gender.Male,"billy",150,10);
+        System.out.println(billy.getName());
+        Person.devPrintAttributes();
     }
 }

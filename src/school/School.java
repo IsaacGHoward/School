@@ -15,11 +15,12 @@ public class School {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Person grill_generic = Person.addPerson("grill", Person.Gender.Female,  100.0);
-        Person boy_generic = Person.addPerson("boy", Person.Gender.Male,  100.0);
-        Person me = Person.addPerson("Isaac", Person.Gender.Male,  100);
-        Person tyler = Person.addPerson("Tyler", Person.Gender.Male, 100.001);
-        Person michael = Person.addPerson("Michael", Person.Gender.Male, 100.0);
+        Student grill_generic = Student.addStudent("grill", Person.Gender.Female,  100.0 ,10);
+        Student boy_generic = Student.addStudent("boy", Person.Gender.Male,  100.0, 10);
+        Student me = Student.addStudent("Isaac", Person.Gender.Male,  100, 10);
+        Student tyler = Student.addStudent("Tyler", Person.Gender.Male, 100.001, 10);
+        Student michael = Student.addStudent("Michael", Person.Gender.Male, 100.0, 10);
+        Person yee = Person.addPerson("YEEEEEEEEEE", Person.Gender.Male, -10);
         
         double val = me.getWeight();
         
@@ -39,7 +40,7 @@ public class School {
         System.out.println(me.getAge());
         
         Student billy = Student.addStudent("Billy",Person.Gender.Male,150,10);
-        
+        billy.addCourse(CS2);
         
        // Student billy = new Student(Person.Gender.Male,"billy",150,10);
         System.out.println(billy.getName());

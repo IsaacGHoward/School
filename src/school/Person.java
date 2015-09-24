@@ -17,7 +17,7 @@ public class Person {
     public static int numPeople = 10;
     private static int currentPeopleIndex = 0;
     //private static Person people[] = new Person[numPeople];
-    private static ArrayList<Person> people = new ArrayList<Person>();
+    protected static ArrayList<Person> people = new ArrayList<Person>();
     private Gender gender;
     private String name;
     private double weight;
@@ -109,14 +109,7 @@ public class Person {
     {
         weight = _weight;
     }
-    public void addCourse(Course _course)
-    {
-        if(theCourse == null)
-        {
-            theCourse = _course;
-            _course.addPerson(this);
-        }
-    }
+    
     public static void printNames()
     {
         System.out.println("people");
@@ -130,7 +123,7 @@ public class Person {
     }
     public static void devPrintAttributes()
     {
-        System.out.println("name  gender  weight ");
+        System.out.println("name  gender  weight class ");
         for (Person temp : people)
         {
             if( temp != null)

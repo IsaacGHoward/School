@@ -14,7 +14,7 @@ public class Course {
     private Type type;
     private int period;
     private static ArrayList<Course> courses = new ArrayList<Course>();
-    private Person thePerson;
+    private Student theStudent;
     public static Course addCourse(String _name, Type _type, int _period)
     {
         Course temp = new Course(_name, _type, _period);
@@ -61,12 +61,12 @@ public class Course {
         return(period);
     }
     
-    public void addPerson(Person _person)
+    public void addStudent(Student _student)
     {
-        if(thePerson == null)
+        if(theStudent == null)
         {
-            thePerson = _person;
-            _person.addCourse(this);
+            theStudent = _student;
+            _student.addCourse(this);
         }
     }
             

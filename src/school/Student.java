@@ -7,6 +7,7 @@ package school;
 
 public class Student extends Person {
     private int gradeLevel;
+    private Course theCourse;
     public static Student addStudent(String _name, Gender _gender, double _weight, int _grade)
     {
         Student temp = new Student(_gender, _name, _weight, _grade);
@@ -27,4 +28,25 @@ public class Student extends Person {
     {
         return(gradeLevel);
     }
+    
+    public void addCourse(Course _course)
+    {
+        if(theCourse == null)
+        {
+            theCourse = _course;
+            _course.addStudent(this);
+        }
+    }
+    public static void printNames()
+    {
+        System.out.println("students");
+        for (Person temp : people)
+        {
+            if( temp instanceof Student)
+            {
+                System.out.println(temp.getName());
+            }
+        }
+    }
+  
 }

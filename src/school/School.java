@@ -15,12 +15,21 @@ public class School {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Student grill_generic = Student.addStudent("grill", Person.Gender.Female,  100.0 ,10);
-        Student boy_generic = Student.addStudent("boy", Person.Gender.Male,  100.0, 10);
+        Student frank = Student.addStudent("Frank", Person.Gender.Male,  100.0 ,11);
+        Student jess = Student.addStudent("Jessica", Person.Gender.Female,  100.0, 11);
         Student me = Student.addStudent("Isaac", Person.Gender.Male,  100, 10);
         Student tyler = Student.addStudent("Tyler", Person.Gender.Male, 100.001, 10);
         Student michael = Student.addStudent("Michael", Person.Gender.Male, 100.0, 10);
-        Person yee = Person.addPerson("YEEEEEEEEEE", Person.Gender.Male, -10);
+        Student jim = Student.addStudent("Jim", Person.Gender.Male, 100.0, 9);
+        Student sarah = Student.addStudent("Sarah", Person.Gender.Female, 100.0, 12);
+        Student jiffy = Student.addStudent("Jiff Y", Person.Gender.Male, 100.0, 12);
+        Student chris = Student.addStudent("Christopher", Person.Gender.Male, 100.0, 10);
+        Student samantha = Student.addStudent("Samantha", Person.Gender.Female, 100.0, 10);
+        Teacher yee = Teacher.addTeacher("Yee", Person.Gender.Male, -10, 5.0001);
+        Teacher ayala = Teacher.addTeacher("Ayala", Person.Gender.Female, 100, 2);
+        Teacher arreola = Teacher.addTeacher("Arreola", Person.Gender.Female, 100, 6.1111);
+        Teacher mcintosh = Teacher.addTeacher("McIntosh", Person.Gender.Female, 100, 8);
+        
         
         double val = me.getWeight();
         
@@ -34,6 +43,18 @@ public class School {
         Course MathAnalysis = Course.addCourse("Math Analysis H",Course.Type.Math, 3);
         Course English10H = Course.addCourse("English 10 H",Course.Type.English, 4);
         
+        me.addCourse(CS2);
+        yee.addCourse(CS2);
+        
+        jim.addCourse(MathAnalysis);
+        ayala.addCourse(MathAnalysis);
+        
+        chris.addCourse(English10H);
+        mcintosh.addCourse(English10H);
+        
+        sarah.addCourse(ASL2);
+        arreola.addCourse(ASL2);
+        
         Course.devPrintAttributes();
         
         me.setBirthdate(23, 5, 2000);
@@ -45,5 +66,13 @@ public class School {
        // Student billy = new Student(Person.Gender.Male,"billy",150,10);
         System.out.println(billy.getName());
         Person.devPrintAttributes();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        
+        Teacher.printNames();
+        
+        System.out.println("");
+        arreola.printStudentName();
     }
 }

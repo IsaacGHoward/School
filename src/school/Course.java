@@ -15,6 +15,7 @@ public class Course {
     private int period;
     private static ArrayList<Course> courses = new ArrayList<Course>();
     private Student theStudent;
+    private Teacher theTeacher;
     public static Course addCourse(String _name, Type _type, int _period)
     {
         Course temp = new Course(_name, _type, _period);
@@ -60,6 +61,10 @@ public class Course {
     {
         return(period);
     }
+    public String getStudent()
+    {
+        return(theStudent.getName());
+    }
     
     public void addStudent(Student _student)
     {
@@ -69,7 +74,15 @@ public class Course {
             _student.addCourse(this);
         }
     }
-            
+     
+    public void addTeacher(Teacher _teacher)
+    {
+        if(theTeacher == null)
+        {
+            theTeacher = _teacher;
+            _teacher.addCourse(this);
+        }
+    }
     public static void printNames()
     {
         System.out.println("Course");

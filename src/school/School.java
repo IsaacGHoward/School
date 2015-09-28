@@ -53,6 +53,7 @@ public class School {
         mcintosh.addCourse(English10H);
         
         sarah.addCourse(ASL2);
+        samantha.addCourse(ASL2);
         arreola.addCourse(ASL2);
         
         Course.devPrintAttributes();
@@ -73,6 +74,6 @@ public class School {
         Teacher.printNames();
         
         System.out.println("");
-        arreola.printStudentName();
+        arreola.printStudentNames();
     }
 }

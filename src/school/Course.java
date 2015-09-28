@@ -14,7 +14,8 @@ public class Course {
     private Type type;
     private int period;
     private static ArrayList<Course> courses = new ArrayList<Course>();
-    private Student theStudent;
+    //private Student theStudent;
+    private ArrayList<Student> students = new ArrayList<Student>();
     private Teacher theTeacher;
     public static Course addCourse(String _name, Type _type, int _period)
     {
@@ -61,27 +62,59 @@ public class Course {
     {
         return(period);
     }
-    public String getStudent()
+    public Student getStudent(int index)
     {
-        return(theStudent.getName());
+        return(students.get(index));
+    }
+    public int getNumStudents()
+    {
+        return(students.size());
+        
     }
     
-    public void addStudent(Student _student)
+    
+    public boolean addStudent(Student _student)
     {
-        if(theStudent == null)
-        {
-            theStudent = _student;
-            _student.addCourse(this);
-        }
+        if(!setStudentOK(_student))
+            return(false);
+        if(!_student.setCourseOK(this))
+            return(false);
+        _student.setCourseDoIt(this);
+        setStudentDoIt(_student);
+        return(true);
     }
      
-    public void addTeacher(Teacher _teacher)
+    public boolean addTeacher(Teacher _teacher)
     {
-        if(theTeacher == null)
-        {
-            theTeacher = _teacher;
-            _teacher.addCourse(this);
-        }
+        if(!setTeacherOK(_teacher))
+            return(false);
+        if(!_teacher.setCourseOK(this))
+            return(false);
+        _teacher.setCourseDoIt(this);
+        setTeacherDoIt(_teacher);
+        return(true);
+    }
+    public boolean setStudentOK(Student _student)
+    {
+        if(_student == null)
+            return(false);
+        return(true);
+    }
+    public boolean setTeacherOK(Teacher _teacher)
+    {
+        if(_teacher == null)
+            return(false);
+        if(theTeacher != null)
+            return(false);
+        return(true);
+    }
+    public void setStudentDoIt(Student _student)
+    {
+        students.add(_student);
+    }
+    public void setTeacherDoIt(Teacher _teacher)
+    {
+        theTeacher = _teacher;
     }
     public static void printNames()
     {

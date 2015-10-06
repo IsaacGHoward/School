@@ -10,16 +10,20 @@ public class Course {
     enum Type {
         Math,Science,English,History,Language,Elective,PE
     }
+    public static final int numPeriods = 4;
     private String name;
     private Type type;
     private int period;
+    private boolean honors;
     private static ArrayList<Course> courses = new ArrayList<Course>();
+    
     //private Student theStudent;
     private ArrayList<Student> students = new ArrayList<Student>();
+   
     private Teacher theTeacher;
-    public static Course addCourse(String _name, Type _type, int _period)
+    public static Course addCourse(String _name, Type _type, int _period, boolean _honors)
     {
-        Course temp = new Course(_name, _type, _period);
+        Course temp = new Course(_name, _type, _period, _honors);
         courses.add(temp);
         return(temp);
         
@@ -30,11 +34,12 @@ public class Course {
         type = Type.Elective;
         period = 0;
     }
-    Course(String _name, Type _type, int _period)
+    Course(String _name, Type _type, int _period, boolean _honors)
     {
         name = _name;
         type = _type;
         period = _period;
+        honors = _honors;
     }
      public void setName(String _name)
     {
@@ -71,9 +76,27 @@ public class Course {
         return(students.size());
         
     }
+    public Teacher getTeacher()
+    {
+        return(theTeacher);
+    }
+    public void setHonors(boolean _honors)
+    {
+        honors = _honors;
+    }
+    public boolean getHonors()
+    {
+        return(honors);
+    }
+    
+//    public int getNumClasses()
+//    {
+//        return(students.size());
+//        
+//    }
     
     
-    public boolean addStudent(Student _student)
+    public boolean addStudent(Student _student, double _grade)
     {
         if(!setStudentOK(_student))
             return(false);
@@ -81,6 +104,8 @@ public class Course {
             return(false);
         _student.setCourseDoIt(this);
         setStudentDoIt(_student);
+        _student.setGradeScore(_grade,this);
+        _student.addNumClasses();
         return(true);
     }
      

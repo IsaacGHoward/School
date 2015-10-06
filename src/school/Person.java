@@ -14,7 +14,7 @@ public class Person {
         Male,Female
     }
     
-    public static int numPeople = 10;
+    public static int numPeople = 20;
     private static int currentPeopleIndex = 0;
     //private static Person people[] = new Person[numPeople];
     protected static ArrayList<Person> people = new ArrayList<Person>();

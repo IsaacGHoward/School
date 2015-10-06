@@ -14,66 +14,52 @@ public class School {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Student frank = Student.addStudent("Frank", Person.Gender.Male,  100.0 ,11);
-        Student jess = Student.addStudent("Jessica", Person.Gender.Female,  100.0, 11);
-        Student me = Student.addStudent("Isaac", Person.Gender.Male,  100, 10);
-        Student tyler = Student.addStudent("Tyler", Person.Gender.Male, 100.001, 10);
-        Student michael = Student.addStudent("Michael", Person.Gender.Male, 100.0, 10);
-        Student jim = Student.addStudent("Jim", Person.Gender.Male, 100.0, 9);
-        Student sarah = Student.addStudent("Sarah", Person.Gender.Female, 100.0, 12);
-        Student jiffy = Student.addStudent("Jiff Y", Person.Gender.Male, 100.0, 12);
-        Student chris = Student.addStudent("Christopher", Person.Gender.Male, 100.0, 10);
-        Student samantha = Student.addStudent("Samantha", Person.Gender.Female, 100.0, 10);
-        Teacher yee = Teacher.addTeacher("Yee", Person.Gender.Male, -10, 5.0001);
-        Teacher ayala = Teacher.addTeacher("Ayala", Person.Gender.Female, 100, 2);
-        Teacher arreola = Teacher.addTeacher("Arreola", Person.Gender.Female, 100, 6.1111);
-        Teacher mcintosh = Teacher.addTeacher("McIntosh", Person.Gender.Female, 100, 8);
+        Student joe =  Student.addStudent("Joe",Person.Gender.Male,165,10);
+        Student jill =  Student.addStudent("Jill",Person.Gender.Female,105,9);
+        Student bobby =  Student.addStudent("Bobby",Person.Gender.Male,168,11);        
+        Student ann =  Student.addStudent("Annie",Person.Gender.Female,98,12);        
+        Student sean =  Student.addStudent("Sean",Person.Gender.Male,138,11);        
+                
+        Teacher price = Teacher.addTeacher("Price", Person.Gender.Male, 206,4.7);
+        Teacher hudson = Teacher.addTeacher("Hudson", Person.Gender.Female, 106,7.2);
+        Teacher anderson = Teacher.addTeacher("Anderson", Person.Gender.Female, 112,3.2);
+        Teacher smith = Teacher.addTeacher("Smith", Person.Gender.Male, 152,8.2);
         
+        Course geom =  Course.addCourse("Geometry", Course.Type.Math, 1,true);
+        Course photo =  Course.addCourse("Photography", Course.Type.Elective, 3,false);       
+        Course biology =  Course.addCourse("Biology", Course.Type.Science, 2,false);       
+        Course worldHistory =  Course.addCourse("WorldHistory", Course.Type.History, 2,false);       
+        Course chemistry =  Course.addCourse("Chemistry", Course.Type.Science, 3,true);       
+        Course dance =  Course.addCourse("Dance", Course.Type.Elective, 1,true);       
+
+        geom.addStudent(bobby,3.5);
+        photo.addStudent(bobby,3.0);
+        biology.addStudent(bobby,4.0);
         
-        double val = me.getWeight();
+        geom.addStudent(jill,2.8);
+        jill.addCourse(chemistry, 3.4);
         
-        //Person.devPrintAttributes();
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        worldHistory.addStudent(ann,4.0);
+        ann.addCourse(photo, 3.7);
+        ann.addCourse(worldHistory, 3.3);
         
-        Course ASL2 = Course.addCourse("American Sign Language 2",Course.Type.Language, 1);
-        Course CS2 = Course.addCourse("Computer Science 2",Course.Type.Elective, 2);
-        Course MathAnalysis = Course.addCourse("Math Analysis H",Course.Type.Math, 3);
-        Course English10H = Course.addCourse("English 10 H",Course.Type.English, 4);
+        worldHistory.addStudent(sean,3.6);
+        chemistry.addStudent(sean,3.1);
+        dance.addStudent(sean,2.4);
+         
+        geom.addTeacher(price);
+        photo.addTeacher(anderson);
+        dance.addTeacher(anderson);
+        biology.addTeacher(smith);
+        smith.addCourse(chemistry);
+        worldHistory.addTeacher(hudson);
+        System.out.println(Student.getHighestGPA());
+        System.out.println(Teacher.mostElectiveCourses());
+        anderson.printStudentsAtGrade(11);
         
-        me.addCourse(CS2);
-        yee.addCourse(CS2);
-        
-        jim.addCourse(MathAnalysis);
-        ayala.addCourse(MathAnalysis);
-        
-        chris.addCourse(English10H);
-        mcintosh.addCourse(English10H);
-        
-        sarah.addCourse(ASL2);
-        samantha.addCourse(ASL2);
-        arreola.addCourse(ASL2);
-        
-        Course.devPrintAttributes();
-        
-        me.setBirthdate(23, 5, 2000);
-        System.out.println(me.getAge());
-        
-        Student billy = Student.addStudent("Billy",Person.Gender.Male,150,10);
-        billy.addCourse(CS2);
-        
-       // Student billy = new Student(Person.Gender.Male,"billy",150,10);
-        System.out.println(billy.getName());
-        Person.devPrintAttributes();
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        
-        Teacher.printNames();
-        
-        System.out.println("");
-        arreola.printStudentNames();
+        Student.printNamesInHonors();
+        System.out.println(ann.getNicestTeacher());
+        System.out.println(jill.isInHonors());
+        //return anderson
     }
 }

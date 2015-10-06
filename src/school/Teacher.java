@@ -66,6 +66,50 @@ public class Teacher extends Person{
         }
         
     }
+    public static Teacher mostElectiveCourses()
+    {
+        Teacher mostElective = null;
+        int highestNumElectives = 0;
+        for(Person temp : people)
+        {
+            if(temp instanceof Teacher)
+            {
+                int numElectives = 0;
+                for(Course ind : ((Teacher)temp).courses )
+                {
+                    if(ind != null && ind.getType() == Course.Type.Elective)
+                    {
+                        numElectives++;
+                        if(numElectives > highestNumElectives)
+                        {
+                            highestNumElectives = numElectives;
+                            mostElective = (Teacher)temp;
+                        }
+                                
+                    }
+                }
+            }
+        }
+        return(mostElective);
+        
+    }
+    public void printStudentsAtGrade(int _grade)
+    {
+        System.out.println("Students at grade "+ _grade + " for teacher "+ getName() +" :");
+        for(Course temp : courses)
+        {
+            if(temp != null)
+            {
+                for(int i=0;i<temp.getNumStudents();i++)
+                {
+                    if(temp.getStudent(i).getGrade() == _grade)
+                    System.out.println(temp.getStudent(i).getName());
+                }
+            }
+        }
+        
+    }
+            
     public boolean addCourse(Course _course)
     {
 //        if(theCourse == null)
@@ -117,6 +161,35 @@ public class Teacher extends Person{
             }
         }
     }
+    public static void printTeachersThatTeachGrade(int _grade)
+    {
+        System.out.println("Teachers who teach students at grade " + _grade + " :");
+        for (Person temp : people)
+        {
+            if( temp instanceof Teacher)
+            {
+                if(temp!=null)
+                {
+                    Teacher teacher = (Teacher)temp;
+                    for(Course ind : teacher.courses)
+                    {
+                         if(ind != null)
+                         {
+                             for(int i=0;i<ind.getNumStudents();i++)
+                             {
+                                if(ind.getStudent(i).getGrade() == _grade)
+                                    System.out.println(teacher.getName());
+                             }
+                         }
+                  
+                    }
+            }
+        }
+        
+        
+    }
+    }
+    
   
 }
 

@@ -1,0 +1,33 @@
+
+ADDING A REPOSITORY: 
+
+add one in github
+
+gitbash here in the project folder
+
+git init                             initialize git repository
+
+git add -A
+
+git commit -m "Initial Commit"
+
+git remote add origin https://github.com/IsaacGHoward/School.git
+
+git push origin master
+
+
+ADDING GIT UPDATE             
+
+git add -A
+
+git commit -m "details about update"
+
+git push origin master
+
+
+RESET :D
+
+git reset --hard (confusing url)
+
+git push origin master -f                                                                              (-f = force, overrides)
+
